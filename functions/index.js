@@ -1520,7 +1520,7 @@ exports.apiPayrollUser = functions.https.onCall(async (data, context) => {
 
                             var itemPayrollTransfer = querySnapshot.docs[0].data()
                             
-                            var docTransfer = itemPayrollTransfer.Transfer.filter((ele) => ele.UserID == userId)
+                            var docTransfer = itemPayrollTransfer.Transfer.filter((ele) => ele.UserID == userId && ele.PayDate != undefined)
                             console.log('docTransfer', docTransfer);
                             if (docTransfer.length > 0) {
                                 docTransfer.sort((a, b) => a.PayDate.localeCompare(b.PayDate))
@@ -3695,7 +3695,7 @@ exports.apiPayrollUserNew = functions.https.onCall(async (data, context) => {
 
                             var itemPayrollTransfer = querySnapshot.docs[0].data()
                             
-                            var docTransfer = itemPayrollTransfer.Transfer.filter((ele) => ele.UserID == userId)
+                            var docTransfer = itemPayrollTransfer.Transfer.filter((ele) => ele.UserID == userId && ele.PayDate != undefined)
                             console.log('docTransfer-->>if', docTransfer);
                             if (docTransfer.length > 0) {
                                 docTransfer.sort((a, b) => a.PayDate.localeCompare(b.PayDate))
@@ -4790,7 +4790,7 @@ exports.apiPayrollUserNew = functions.https.onCall(async (data, context) => {
 
                             var itemPayrollTransfer = querySnapshot.docs[0].data()
                             
-                            var docTransfer = itemPayrollTransfer.Transfer.filter((ele) => ele.UserID == userId)
+                            var docTransfer = itemPayrollTransfer.Transfer.filter((ele) => ele.UserID == userId && ele.PayDate != undefined)
                             console.log('docTransfer-->>if', docTransfer);
                             if (docTransfer.length > 0) {
                                 docTransfer.sort((a, b) => a.PayDate.localeCompare(b.PayDate))
@@ -6903,7 +6903,7 @@ exports.apiPayrollClarify = functions.https.onCall(async (data, context) => {
 
                             var itemPayrollTransfer = querySnapshot.docs[0].data()
                             
-                            var docTransfer = itemPayrollTransfer.Transfer.filter((ele) => ele.UserID == userId)
+                            var docTransfer = itemPayrollTransfer.Transfer.filter((ele) => ele.UserID == userId && ele.PayDate != undefined)
                             console.log('docTransfer-->>if', docTransfer);
                             if (docTransfer.length > 0) {
                                 docTransfer.sort((a, b) => a.PayDate.localeCompare(b.PayDate))
